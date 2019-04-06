@@ -17,7 +17,7 @@ namespace kitronik_servo_lite {
      * Drives forwards. Call stop to stop
      */
     //% blockId=kitronik_servolite_servos_forward
-    //% block="drive forward"
+    //% block="vorwärts fahren"
     export function forward(): void {
         pins.servoWritePin(AnalogPin.P1, 0);
         pins.servoWritePin(AnalogPin.P2, 180);
@@ -27,7 +27,7 @@ namespace kitronik_servo_lite {
      * Drives backwards. Call stop to stop
      */
     //% blockId=kitronik_servolite_servos_backward
-    //% block="drive backward"
+    //% block="rückwärts fahren"
     export function backward(): void {
         pins.servoWritePin(AnalogPin.P1, 180);
         pins.servoWritePin(AnalogPin.P2, 0);
@@ -37,7 +37,7 @@ namespace kitronik_servo_lite {
 	* Turns left. Call stop to stop
 	*/
     //% blockId=kitronik_servolite_servos_left
-    //% block="turn left"
+    //% block="nach links drehen"
     export function left(): void {
         pins.servoWritePin(AnalogPin.P1, 0);
         pins.servoWritePin(AnalogPin.P2, 0);
@@ -47,7 +47,7 @@ namespace kitronik_servo_lite {
 	 * Turns right. Call ``stop`` to stop
 	 */
     //% blockId=kitronik_servolite_servos_right
-    //% block="turn right"
+    //% block="nach rechts drehen"
     export function right(): void {
         pins.servoWritePin(AnalogPin.P1, 180);
         pins.servoWritePin(AnalogPin.P2, 180);
@@ -61,7 +61,7 @@ namespace kitronik_servo_lite {
 	 * It will also not provide any holding force.
      */
     //% blockId=kitronik_servolite_servos_stop
-    //% block="stop"
+    //% block="Stop"
     export function stop(): void {
         pins.analogWritePin(AnalogPin.P1, 0);
         pins.analogWritePin(AnalogPin.P2, 0);
@@ -72,7 +72,7 @@ namespace kitronik_servo_lite {
 	 * On a well trimmed 360 this is stationary, on a normal servo this is 90 degrees.
      */
     //% blockId=kitronik_servolite_servos_neutral
-    //% block="goto neutral position"
+    //% block="Neutrale Position"
     export function neutral(): void {
         pins.servoWritePin(AnalogPin.P1, 90);
         pins.servoWritePin(AnalogPin.P2, 90);
@@ -83,7 +83,7 @@ namespace kitronik_servo_lite {
      * @param howFar distance to move
      */
     //% blockId=kitronik_servolite_drive_forwards
-    //% block="drive forwards %howFar|distance" 
+    //% block="vorwärts fahren %howFar|Schritte" 
     export function driveForwards(howFar: number): void {
         let timeToWait = (howFar * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
         forward();
@@ -96,7 +96,7 @@ namespace kitronik_servo_lite {
      * @param howFar distance to move
      */
     //% blockId=kitronik_servolite_drive_backwards
-    //% block="drive backwards %howFar|distance" 
+    //% block="rückwärts fahren %howFar|Schritte" 
     export function driveBackwards(howFar: number): void {
         let timeToWait = (howFar * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
         backward();
@@ -112,7 +112,7 @@ namespace kitronik_servo_lite {
      * @param deg how far to turn, eg: 90
      */
     //% blockId=kitronik_servolite_turn_right
-    //% block="turn right %deg|degrees"
+    //% block="rechts herum drehen um %deg|Grad"
     export function turnRight(deg: number): void {
         let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
         pins.servoWritePin(AnalogPin.P1, 130);
@@ -129,7 +129,7 @@ namespace kitronik_servo_lite {
     * @param deg how far to turn, eg: 90
     */
     //% blockId=kitronik_servolite_turn_left
-    //% block="turn left %deg|degrees"
+    //% block="links herum drehen um %deg|Grad"
     export function turnLeft(deg: number): void {
         let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
         pins.servoWritePin(AnalogPin.P1, 50);
@@ -144,7 +144,7 @@ namespace kitronik_servo_lite {
      * @param degPerSec : How many degrees per second the mini does.
      */
     //% blockId=kitronik_servolite_set_turn_speed_param
-    //% block="calibrate turn speed to %DegPerSec|degrees per second" 
+    //% block="Drehgeschwindigkeit kalibrieren zu %DegPerSec|Grad pro Sekunde" 
     export function setDegreesPerSecond(degPerSec: number): void {
         numberOfDegreesPerSec = degPerSec
     }
@@ -155,7 +155,7 @@ namespace kitronik_servo_lite {
      * @param DegPerSec : How many degrees per second the mini does.
      */
     //% blockId=kitronik_servolite_set_movement_speed_param 
-    //% block="calibrate forward speed to %DistPerSec|mm per second"
+    //% block="Geschwindigket kalibrieren zu %DistPerSec|mm pro Sekunde"
     export function setDistancePerSecond(distPerSec: number): void {
         distancePerSec = distPerSec
     }
