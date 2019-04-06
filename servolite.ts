@@ -152,7 +152,7 @@ namespace kitronik_servo_lite {
     /**
      * Allows the setting of the :MOVE mini forward / reverse speed.
      * This allows tuning for the move x distance commands
-     * @param DegPerSec : How many degrees per second the mini does.
+     * @param DistPerSec : How many mm per second the mini does.
      */
     //% blockId=kitronik_servolite_set_movement_speed_param 
     //% block="calibrate forward speed to %DistPerSec|mm per second"
